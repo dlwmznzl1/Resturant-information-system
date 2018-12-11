@@ -2,47 +2,42 @@ package com.hsc.ghfwm.food;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import java.util.ArrayList;
 
-
-public class Restaurant implements Parcelable
+public class rest implements Parcelable
 {
     private String name;
     private String telnumber;
     private ArrayList<String> menu;
-    private String homepage;
     private String date;
     private int categorynum;
 
-    public Restaurant(String name, String telnum, String Homepage, int categorynum)
+    public rest(String name, String telnum,  int categorynum)
     {
         this.name = name;
         this.telnumber= telnum;
-        this.homepage = Homepage;
         this.categorynum = categorynum;
         menu = new ArrayList<String>();
     }
 
 
-    protected Restaurant(Parcel in) {
+    protected rest(Parcel in) {
         name = in.readString();
         telnumber = in.readString();
         menu = in.createStringArrayList();
-        homepage = in.readString();
         date = in.readString();
         categorynum = in.readInt();
     }
 
-    public static final Creator<Restaurant> CREATOR = new Creator<Restaurant>() {
+    public static final Creator<rest> CREATOR = new Creator<rest>() {
         @Override
-        public Restaurant createFromParcel(Parcel in) {
-            return new Restaurant(in);
+        public rest createFromParcel(Parcel in) {
+            return new rest(in);
         }
 
         @Override
-        public Restaurant[] newArray(int size) {
-            return new Restaurant[size];
+        public rest[] newArray(int size) {
+            return new rest[size];
         }
     };
 
@@ -56,7 +51,6 @@ public class Restaurant implements Parcelable
         dest.writeString(name);
         dest.writeString(telnumber);
         dest.writeStringList(menu);
-        dest.writeString(homepage);
         dest.writeString(date);
         dest.writeInt(categorynum);
     }
@@ -82,10 +76,6 @@ public class Restaurant implements Parcelable
         return menu.get(2);
     }
 
-    public String getHomepage() {
-        return homepage;
-    }
-
     public String getDate() {
         return date;
     }
@@ -109,10 +99,6 @@ public class Restaurant implements Parcelable
 
     public void setMenu(String item) {
         menu.add(item);
-    }
-
-    public void setHomepage(String Homepage) {
-        this.homepage = Homepage;
     }
 
     public void setDate(String date) {

@@ -15,9 +15,9 @@ import java.sql.Date;
 
 public class Main2Activity extends AppCompatActivity
 {
-    EditText etname,ettel,etmenu1,etmenu2,etmenu3,etaddr;
+    EditText etname,ettel,etmenu1,etmenu2,etmenu3;
     RadioButton rb1,rb2,rb3;
-    Restaurant res;
+    rest res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,7 +29,6 @@ public class Main2Activity extends AppCompatActivity
         etmenu1 = (EditText)findViewById(R.id.etmenu1);
         etmenu2 = (EditText)findViewById(R.id.etmenu2);
         etmenu3 = (EditText)findViewById(R.id.etmenu3);
-        etaddr = (EditText)findViewById(R.id.etaddr);
         rb1 = (RadioButton)findViewById(R.id.radio1);
         rb2 = (RadioButton)findViewById(R.id.radio2);
         rb3 = (RadioButton)findViewById(R.id.radio3);
@@ -74,10 +73,7 @@ public class Main2Activity extends AppCompatActivity
 
     public void setcategory(int n)
     {
-        res = new Restaurant(etname.getText().toString(),
-                ettel.getText().toString(),
-                etaddr.getText().toString(),
-                n);
+        res = new rest(etname.getText().toString(), ettel.getText().toString(),n);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

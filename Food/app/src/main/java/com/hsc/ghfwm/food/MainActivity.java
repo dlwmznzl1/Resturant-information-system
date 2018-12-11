@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
 {
     ArrayList<String> resturantdata = new ArrayList<String>();
     ArrayAdapter<String> Adapter;
-    ArrayList<Restaurant> resturantlist = new ArrayList<Restaurant>();
+    ArrayList<rest> resturantlist = new ArrayList<rest>();
     ListView listview;
     final int RESTURANT_INFO = 21;
     final int NEW_RESTURANT = 22;
@@ -45,24 +45,20 @@ public class MainActivity extends AppCompatActivity
     }
     public void setListView()
     {
-        listview = (ListView)findViewById(R.id.listview);
+        listview = (ListView)findViewById(R.id.list);
 
-        //데이터를 만들고
-        //data.add("무언가");
-
-        //어댑터 만듬
         Adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,resturantdata);
         listview.setAdapter(Adapter);
 
-        //꾹 눌렀을때 삭제
+
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, final View view, final int position, long id) {
 
-                //정보를 삭제하는지 묻는 대화상자 나타남
+
                 AlertDialog.Builder dlg = new AlertDialog.Builder(view.getContext());
                 dlg.setTitle("삭제확인")
-                        .setIcon(R.drawable.potato)
+                        .setIcon(R.drawable.icon2)
                         .setMessage("선택한 맛집을 정말 삭제하시겠습니까?")
                         .setNegativeButton("취소",null)
                         .setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -82,13 +78,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        //클릭시 상세정보가 나타남
+
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 Intent intent = new Intent(MainActivity.this,Main3Activity.class);
-                Restaurant res = resturantlist.get(position);
+                rest res = resturantlist.get(position);
                 intent.putExtra("식당 정보",res);
                 startActivity(intent);
 
@@ -104,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         {
             if(resultCode == RESULT_OK)
             {
-                Restaurant res = data.getParcelableExtra("새로운 맛집"); //새 레스토랑 받아옴
+                rest res = data.getParcelableExtra("새로운 맛집");
                 resturantdata.add(res.getName());
                 resturantlist.add(res);
                 Adapter.notifyDataSetChanged();

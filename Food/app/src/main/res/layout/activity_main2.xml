@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/rest"
     android:id="@+id/activity_main2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    android:gravity="center"
+
     >
     <TableLayout
         android:background="#ddfef8f8"
@@ -66,7 +65,7 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="68dp"
-                    android:src="@drawable/chicken" />
+                    android:src="@drawable/noddle" />
                 <RadioButton
                     android:id="@+id/radio2"
                     android:layout_width="wrap_content"
@@ -74,7 +73,7 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="68dp"
-                    android:src="@drawable/pizza" />
+                    android:src="@drawable/rice" />
                 <RadioButton
                     android:id="@+id/radio3"
                     android:layout_width="wrap_content"
@@ -91,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Tel:"
+                android:text="전화번호:"
                 android:textSize="18dp" />
             <EditText
                 android:id="@+id/ettel"
@@ -153,23 +152,7 @@
                 android:hint="메뉴명 (가격)"
                 android:padding="3dp" />
         </TableRow>
-        <TableRow android:padding="3dp">
-            <TextView
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Homepage:"
-                android:textSize="18dp" />
-            <EditText
-                android:id="@+id/etaddr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="http://"
-                android:background="#ffffff"
-                android:padding="3dp" />
-        </TableRow>
+
     </TableLayout>
     <LinearLayout
         android:layout_width="match_parent"

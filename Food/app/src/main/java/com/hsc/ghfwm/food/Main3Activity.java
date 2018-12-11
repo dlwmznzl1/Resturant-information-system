@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class Main3Activity extends AppCompatActivity
 {
-    TextView name, menu1,menu2,menu3,tvtel,tvaddress,tvdate;
+    TextView name, menu1,menu2,menu3,tvtel,tvdate;
     ImageView imageView;
     Button back;
     @Override
@@ -29,12 +29,11 @@ public class Main3Activity extends AppCompatActivity
         menu2 = (TextView)findViewById(R.id.etmenu2);
         menu3 = (TextView)findViewById(R.id.etmenu3);
         tvtel = (TextView)findViewById(R.id.tvTel);
-        tvaddress = (TextView)findViewById(R.id.tvURL);
         tvdate = (TextView)findViewById(R.id.tvRegdate);
         back = (Button)findViewById(R.id.btnback) ;
         imageView = (ImageView)findViewById(R.id.imgno);
         Intent intent = getIntent();
-        Restaurant res = intent.getParcelableExtra("식당 정보");
+        rest res = intent.getParcelableExtra("식당 정보");
 
         name.setText(res.getName());
         menu1.setText(res.getmenu1());
@@ -42,16 +41,15 @@ public class Main3Activity extends AppCompatActivity
         menu3.setText(res.getmenu3());
         tvtel.setText(res.getTel());
         tvdate.setText(res.getDate());
-        tvaddress.setText(res.getHomepage());
         if(res.getCategorynum() == 1)
         {
-            imageView.setImageResource(R.drawable.chicken);
+            imageView.setImageResource(R.drawable.noddle);
         }
         else if (res.getCategorynum() == 2)
         {
-            imageView.setImageResource(R.drawable.pizza);
+            imageView.setImageResource(R.drawable.rice);
         }
-        else //기타
+        else
         {
             imageView.setImageResource(R.drawable.or);
         }
@@ -60,7 +58,7 @@ public class Main3Activity extends AppCompatActivity
     public void onClick(View v)
     {
         Intent intent = getIntent();
-        Restaurant res = intent.getParcelableExtra("식당 정보");
+        rest res = intent.getParcelableExtra("식당 정보");
         switch (v.getId())
         {
             case R.id.btnback:
@@ -71,10 +69,6 @@ public class Main3Activity extends AppCompatActivity
                 startActivity(intent2);
                 break;
 
-            case R.id.imageView3:
-                Intent intent3 = new Intent(Intent.ACTION_VIEW,Uri.parse(res.getHomepage()));
-                startActivity(intent3);
-                break;
         }
     }
 }
