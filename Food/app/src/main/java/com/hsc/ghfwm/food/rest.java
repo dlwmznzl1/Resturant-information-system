@@ -75,6 +75,11 @@ public class rest implements Parcelable
     {
         return menu.get(2);
     }
+    public String getmenu4()
+    {
+        return menu.get(3);
+    }
+
 
     public String getDate() {
         return date;
@@ -85,7 +90,7 @@ public class rest implements Parcelable
     }
 
     public String printmenu(){
-        String str = menu.get(0) + ", " + menu.get(1) + ", " +menu.get(2);
+        String str = menu.get(0) + ", " + menu.get(1) + ", " +menu.get(2)+", "+menu.get(3);
         return str;
     }
 

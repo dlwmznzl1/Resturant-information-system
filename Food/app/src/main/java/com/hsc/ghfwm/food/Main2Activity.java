@@ -15,7 +15,7 @@ import java.sql.Date;
 
 public class Main2Activity extends AppCompatActivity
 {
-    EditText etname,ettel,etmenu1,etmenu2,etmenu3;
+    EditText etname,ettel,etmenu1,etmenu2,etmenu3,etmenu4;
     RadioButton rb1,rb2,rb3;
     rest res;
 
@@ -29,12 +29,11 @@ public class Main2Activity extends AppCompatActivity
         etmenu1 = (EditText)findViewById(R.id.etmenu1);
         etmenu2 = (EditText)findViewById(R.id.etmenu2);
         etmenu3 = (EditText)findViewById(R.id.etmenu3);
+        etmenu4 = (EditText)findViewById(R.id.etmenu4);
         rb1 = (RadioButton)findViewById(R.id.radio1);
         rb2 = (RadioButton)findViewById(R.id.radio2);
         rb3 = (RadioButton)findViewById(R.id.radio3);
-        setTitle("새 주문");
-
-        //ArrayList<String> dt = Intent.getStringExtra("restlist");
+        setTitle("새로운 맛집");
 
     }
 
@@ -63,6 +62,7 @@ public class Main2Activity extends AppCompatActivity
             res.setMenu(etmenu1.getText().toString());
             res.setMenu(etmenu2.getText().toString());
             res.setMenu(etmenu3.getText().toString());
+            res.setMenu(etmenu4.getText().toString());
             res.setDate(finddate());
             Intent intent = getIntent();
             intent.putExtra("새로운 맛집",res);
