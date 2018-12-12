@@ -67,7 +67,7 @@ public class Main3Activity extends AppCompatActivity
                 finish();
                 break;
             case R.id.imageView2:
-                Intent intent2 = new Intent(Intent.ACTION_DIAL, Uri.parse("전화번호:/"+res.getTel()));
+                Intent intent2 = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:/"+res.getTel()));
                 startActivity(intent2);
                 break;
 

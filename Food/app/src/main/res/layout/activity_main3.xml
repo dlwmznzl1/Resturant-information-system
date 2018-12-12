@@ -100,7 +100,7 @@
                 android:background="#ffffff"
                 android:padding="3dp"
                 android:text="전화번호"
-                android:textColor="#ff0000" />
+                android:textColor="#2E2E2E" />
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
